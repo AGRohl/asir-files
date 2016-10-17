@@ -86,8 +86,8 @@ iptables -A FORWARD -s $ip_dmz -p tcp --sport 443 -j ACCEPT
 
 #ping
 iptables -A OUTPUT -p icmp -j ACCEPT
-iptables -A INPUT -p icmp -j ACCEPT
 iptables -A FORWARD -p icmp -j ACCEPT
+iptables -A INPUT -p icmp -m state --state ESTABLISHED,RELATED -j ACCEPT
 
 # Acceso desde la WAN al servidor web
 
