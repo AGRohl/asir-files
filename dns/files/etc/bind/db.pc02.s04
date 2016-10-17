@@ -1,0 +1,19 @@
+$ORIGIN pc02.s04.
+
+$TTL    604800
+
+@       IN      SOA      SRI-SRV.pc02.s04. admin.pc02.s04. (
+                         2016091101         ; Serial
+                          604800            ; Refresh
+                           86400            ; Retry
+                         2419200            ; Expire
+                          604800 )          ; Negative Cache TTL
+;
+
+@       	IN      NS      SRI-SRV.pc02.s04. ;
+SRI-SRV      	IN      A       172.20.102.22
+@	      	IN      MX      10 SRI-SRV
+SAD-SRV		IN 	A	172.20.102.254
+SRI		IN	CNAME   SRI-SRV	
+SAD		IN	CNAME	SAD-SRV
+
